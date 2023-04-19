@@ -16,8 +16,8 @@
     box: 2, 0, 8, 1, CUSTOM, window, W
     box: 9, 2, 10, 8, CUSTOM, window, W
     box: 2, 9, 8, 10, CUSTOM, window, W
-    door: 4, 9, C
-    door: 5, 9, C
+    door: 4, 9, O
+    door: 5, 9, O
 
 # House Interior
     custom: 1, 1, chest, $, Meta: Contains your life savings
