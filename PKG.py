@@ -60,7 +60,7 @@ match command:
         print("HOW TO FORMAT A COMMAND: \n"
               "1. USE COMMAND KEYWORD (COMP_DIR or DECOMP_PKG)\n"
               "2. ENTER PARAMETERS (PLACED AFTER THE : IN THE DIRECTIONS)\n"
-              "\n EX: python intoOne.py COMP_DIR ASSETS assets.dmlp\n"
+              "\n EX: python PKG.py COMP_DIR ASSETS assets.dmlp\n"
               "COMMANDS:\n"
               "\n     - COMP_DIR: DirectoryPath, FinalOutputPath"
               "\n     - DECOMP_PKG: path/to/PKG, FinalDecompressionPath"
