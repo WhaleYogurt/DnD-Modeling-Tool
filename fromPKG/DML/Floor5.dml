@@ -1,0 +1,21 @@
+# FLOOR 5
+mapSize: 8, 8
+META: A luxurious penthouse apartment with a stunning view of the city
+CDTM: Assets/CUSTOM/stoneBricks.png
+
+# Balcony
+box: 0, 4, 3, 7, WALL, CORNER
+box: 1, 5, 2, 6, EMPTY, foo
+door: 3, 5, CLOSED
+
+# Living Room
+box: 4, 2, 7, 7, WALL, CORNER
+box: 5, 3, 6, 6, EMPTY, foo
+custom: 4, 4, couch, S
+custom: 6, 6, TV, T
+
+# Bedroom
+box: 0, 0, 3, 3, WALL, CORNER
+box: 1, 1, 2, 2, EMPTY, foo
+custom: 1, 1, bed, B
+custom: 2, 2, dresser, D

@@ -1,0 +1,38 @@
+# Header
+    META: Second Floor of a Hotel
+    CONFIG: holdMeta/True
+    mapSize: 10, 10 # Map Size
+
+# Body
+    # Main Floor
+        # Stairs
+            # Floor 1
+                stairs: 1, 1, D
+                stairs: 2, 1, D
+                stairs: 3, 1, D
+            # Floor 3
+                stairs: 1, 8, U
+                stairs: 2, 8, U
+                stairs: 3, 8, U
+
+    # Left Room
+        # Main Room Parts
+            box: 5, 1, 6, 3, WALL, SIDE
+            wall: 5, 3, CORNER
+            wall: 9, 3, CORNER
+            wall: 5, 0, CORNER
+            door: 6, 3, C
+            box: 7, 3, 9, 4, WALL, UP
+        # Inside of room
+            custom: 8, 1, bed, B, META: Comfortable but creaky
+
+    # Right Room
+        # Main Room Parts
+            box: 5, 7, 6, 9, WALL, SIDE
+            wall: 5, 6, CORNER
+            wall: 9, 6, CORNER
+            wall: 5, 9, CORNER
+            door: 6, 6, C
+            box: 7, 6, 9, 7, WALL, UP
+        # Inside of room
+            custom: 8, 8, bed, B, META: Firm but old-fashioned

@@ -1,0 +1,30 @@
+# This is a comment explaining what we're doing
+# First, we'll set the size of our map
+mapSize: 10, 10
+
+# Next, we'll create the walls of our room
+wall: 1, 1, S
+wall: 1, 2, S
+wall: 1, 3, S
+wall: 1, 4, S
+wall: 2, 4, E
+wall: 3, 4, E
+wall: 4, 4, E
+wall: 5, 4, E
+wall: 5, 3, S
+wall: 5, 2, S
+wall: 5, 1, S
+wall: 4, 1, W
+wall: 3, 1, W
+wall: 2, 1, W
+wall: 2, 2, N
+wall: 2, 3, N
+
+# Now we'll create a door on one of the walls
+door: 1, 2, CLOSED
+
+# And a window on another wall
+custom: 4, 2, window, W
+
+# Finally, we'll add some metadata to our map
+META: This is a small room with a door and a window.

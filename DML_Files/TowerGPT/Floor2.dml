@@ -1,0 +1,27 @@
+META: A tower with balconies
+mapSize: 20, 20
+CDTM: Assets/CUSTOM/stoneBricks.png
+
+# Body
+
+    # Main Room
+        box: 0, 0, 20, 20, WALL, CORNER
+        box: 1, 1, 18, 18, EMPTY, foo
+        door: 0, 9, CLOSED
+
+    # Add a balcony
+        box: 1, 9, 2, 10, EMPTY, foo
+        wall: 1, 8, UP
+        wall: 2, 8, UP
+        wall: 1, 11, UP
+        wall: 2, 11, UP
+        box: 1, 8, 2, 11, EMPTY, foo
+        cT: 1, 10, 666666, darkGrey, -
+
+    # Add a staircase
+        box: 8, 8, 11, 11, WALL, CORNER
+        box: 9, 9, 10, 10, EMPTY, foo
+        cT: 9, 9, 666666, darkGrey, <
+        cT: 10, 10, 666666, darkGrey, >
+
+META: Second floor of the tower

@@ -1,0 +1,44 @@
+# META: Supermarket
+mapSize: 20, 30
+
+# Walls
+box: 1, 1, 18, 28, WALL, N
+
+# Aisles
+box: 3, 3, 16, 4, CUSTOM, veggie, +
+box: 3, 6, 16, 7, CUSTOM, fruit, +
+box: 3, 9, 16, 10, CUSTOM, meat, +
+box: 3, 12, 16, 13, CUSTOM, dairy, +
+box: 3, 15, 16, 16, CUSTOM, bakery, +
+box: 3, 18, 16, 19, CUSTOM, canned_food, +
+
+# Shelves
+box: 5, 5, 6, 7, CUSTOM, shelf, 3x3, type:produce
+box: 8, 5, 9, 7, CUSTOM, shelf, 3x2, type:produce
+box: 11, 5, 12, 7, CUSTOM, shelf, 3x2, type:produce
+box: 14, 5, 15, 7, CUSTOM, shelf, 3x3, type:produce
+
+box: 5, 10, 6, 12, CUSTOM, shelf, 3x3, type:meat
+box: 8, 10, 9, 12, CUSTOM, shelf, 3x2, type:meat
+box: 11, 10, 12, 12, CUSTOM, shelf, 3x2, type:meat
+box: 14, 10, 15, 12, CUSTOM, shelf, 3x3, type:meat
+
+box: 5, 14, 6, 16, CUSTOM, shelf, 3x3, type:dairy
+box: 8, 14, 9, 16, CUSTOM, shelf, 3x2, type:dairy
+box: 11, 14, 12, 16, CUSTOM, shelf, 3x2, type:dairy
+box: 14, 14, 15, 16, CUSTOM, shelf, 3x3, type:dairy
+
+box: 5, 19, 6, 21, CUSTOM, shelf, 3x3, type:packaged
+box: 8, 19, 9, 21, CUSTOM, shelf, 3x2, type:packaged
+box: 11, 19, 12, 21, CUSTOM, shelf, 3x2, type:packaged
+box: 14, 19, 15, 21, CUSTOM, shelf, 3x3, type:packaged
+
+# Checkout
+box: 1, 23, 2, 28, CUSTOM, checkout, C
+custom: 1, 24, sign, text:Cashier
+
+# Entrance/Exit
+box: 1, 0, 1, 2, door, O
+custom: 2, 1, sign, text:Entrance/Exit
+box: 1, 28, 2, 29, door, O
+custom: 2, 29, sign, text:Entrance/Exit

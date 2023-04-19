@@ -1,0 +1,23 @@
+# Map Setup
+    mapSize: 10, 10
+    META: Just a small house used to demonstrate some basic abilities of DML
+    CDTM: Assets/CUSTOM/floor.png
+
+# Room Shape
+    box: 0, 0, 10, 10, WALL, CORNER
+    box: 1, 0, 9, 1, WALL, UP
+    box: 1, 9, 9, 10, WALL, UP
+    box: 9, 1, 10, 9, WALL, SIDE
+    box: 0, 1, 1, 9, WALL, SIDE
+    box: 1, 1, 9, 9, EMPTY, foo
+
+# House Components
+    box: 0, 2, 1, 8, CUSTOM, window, W
+    box: 2, 0, 8, 1, CUSTOM, window, W
+    box: 9, 2, 10, 8, CUSTOM, window, W
+    box: 2, 9, 8, 10, CUSTOM, window, W
+    door: 4, 9, C
+    door: 5, 9, C
+
+# House Interior
+    custom: 1, 1, chest, $, Meta: Contains your life savings

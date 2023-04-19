@@ -1,0 +1,37 @@
+BASIC SYNTAX:
+  - When asked for a "TYPE" input one of the following WALL, DOOR, or EMPTY
+  - When asked for a 'TRAIT' you have a different set of options depending on the type being modified
+      - WALL: You can enter the direction it's facing (N, E, S, W, UP, SIDE, CORNER)
+      - DOOR: You can enter if the door is opened or closed (O, OPEN, C, CLOSED)
+      - EMPTY: This will empty the tile given so no specific trait is required but it is recommended to use null, none, or foo
+  - To make a comment just use the pound sign (#) and anything after that will be ignored by the compiler
+  - After writing the basic syntax of a command anything added afterwards will be ignored and this can be used to
+    store meta data like the health of a player or the contents of a chest
+      - EX: player: 10, 4, Borus, HP: 18, CLASS: FIGHTER
+COMMANDS:
+  - mapSize: xLength, yLength
+      - mapSize: 10, 19
+  - wall: x, y, TRAIT
+      - 2, 1, UP
+  - door: x, y, TRAIT
+      - door: 4, 3, OPEN
+  - player: x, y, PlayerName
+      - player: 10, 4, Borus
+  - enemy: x, y, EnemyName
+      - enemy: 3, 4, Goblin
+  - custom: x, y, name, Symbol
+      - custom: 5, 4, chest, C
+  - group: x1;y1, x2;y2, Type, TRAIT
+      - EX: group: 10;5, 10;6, door, O
+  - clear: x, y
+      - EX: clear: 9, 0
+  - box: x1, y1, x2, y2, Type, Trait
+      - EX: 0, 0, 10, 10, WALL, CORNER
+      - EX: 0, 0, 10, 10, (cT or colorTile), 666666, darkGrey, G
+  - colorTile or cT: x, y, hex, colorName, Symbol
+      - EX: 5, 10, 666666, darkGrey, G
+  - CONFIG: [holdMeta/True or False]
+      - EX: CONFIG: holdMeta/True
+  - customDefaultTileName or CDTM: path/to/image/file.png
+  - META: Ignored by compiler (Use to give explanation of what this map is in a general sense)
+      - META: A cool room filed with gold

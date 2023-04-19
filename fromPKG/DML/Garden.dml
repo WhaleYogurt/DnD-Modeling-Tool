@@ -1,0 +1,81 @@
+# BASIC SYNTAX:
+#   - When asked for a "TYPE" input one of the following WALL, DOOR, or EMPTY
+#   - When asked for a 'TRAIT' you have a different set of options depending on the type being modified
+#       - WALL: You can enter the direction it's facing (N, E, S, W, UP, SIDE, CORNER)
+#       - DOOR: You can enter if the door is opened or closed (O, OPEN, C, CLOSED)
+#       - EMPTY: This will empty the tile given so no specific trait is required but it is recommended to use null, none, or foo
+#   - To make a comment just use the pound sign (#) and anything after that will be ignored by the compiler
+#   - After writing the basic syntax of a command anything added afterwards will be ignored and this can be used to
+#     store meta data like the health of a player or the contents of a chest
+#       - EX: player: 10, 4, Borus, HP: 18, CLASS: FIGHTER
+# COMMANDS:
+#   - mapSize: xLength, yLength
+#   - wall: x, y, TRAIT
+#   - door: x, y, TRAIT
+#   - player: x, y, PlayerName
+#   - enemy: x, y, EnemyName
+#   - custom: x, y, name, Symbol
+#   - group: x1;y1, x2;y2, Type, TRAIT
+#   - clear: x, y
+#   - line: x1, y1, x2, y2
+#   - box: x1, y1, x2, y2, Type, Trait
+#   - CONFIG: [holdMeta/True or False]
+#   - META: Ignored by compiler (Use to give explanation of what this map is in a general sense)
+
+# Create a 50x50 grid for the garden
+mapSize: 50, 50
+
+# Add some metadata about the garden
+META: This is a large garden with a fountain, benches, trees, flowers, and lampposts. It is a peaceful place to relax and enjoy nature.
+
+# Create garden using box
+box: 0, 0, 50, 50, WALL, UP
+box: 0, 1, 2, 49, WALL, SIDE
+box: 48, 1, 50, 49, WALL, SIDE
+box: 2, 2, 48, 48, EMPTY, FOO
+
+# Create Corner Pieces
+group: 0;0, 1;1, WALL, CORNER
+group: 49;0, 48;1, WALL, CORNER
+group: 49;49, 48;48, WALL, CORNER
+group: 0;49, 1;48, WALL, CORNER
+
+# Create a fountain in the center of the garden
+custom: 25, 25, fountain, F
+
+# Add some decorative flowers around the fountain
+group: 24;23, 24;26, CUSTOM, flowers, F
+group: 26;23, 26;26, CUSTOM, flowers, F
+group: 23;24, 26;24, CUSTOM, flowers, F
+group: 23;26, 26;26, CUSTOM, flowers, F
+
+# Add some trees around the edges of the garden
+group: 3;3, 3;6, CUSTOM, tree, T
+group: 7;3, 7;6, CUSTOM, tree, T
+group: 3;43, 3;46, CUSTOM, tree, T
+group: 7;43, 7;46, CUSTOM, tree, T
+group: 43;3, 43;6, CUSTOM, tree, T
+group: 47;3, 47;6, CUSTOM, tree, T
+group: 43;43, 43;46, CUSTOM, tree, T
+group: 47;43, 47;46, CUSTOM, tree, T
+
+# Add some benches for people to sit on
+custom: 9, 20, bench, B
+custom: 20, 9, bench, B
+custom: 40, 29, bench, B
+custom: 29, 40, bench, B
+
+# Add some lampposts for illumination at night
+custom: 12, 12, lamppost, L
+custom: 12, 37, lamppost, L
+custom: 37, 12, lamppost, L
+custom: 37, 37, lamppost, L
+
+# Add a sign with the name of the garden
+custom: 2, 2, sign, S
+
+# Adding Plants on the bottem of the screen
+box: 40, 3, 47, 9, CUSTOM, tomato, T
+box: 40, 10, 47, 16, CUSTOM, carrot, C
+box: 40, 17, 47, 23, CUSTOM, broccoli, B
+box: 40, 24, 47, 30, CUSTOM, radish, R

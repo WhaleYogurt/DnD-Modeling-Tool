@@ -1,0 +1,44 @@
+# Header
+    META: A creepy dungeon filled with traps
+    mapSize: 20, 20
+    CDTM: Assets/CUSTOM/stoneBricks.png
+
+# Body
+
+    # Main Room
+        box: 0, 0, 20, 20, WALL, CORNER
+        box: 1, 1, 19, 19, EMPTY, foo
+        door: 0, 9, CLOSED
+
+    # Create traps
+        box: 2, 2, 3, 3, cT, 666666, darkGrey, T
+        box: 2, 16, 3, 17, cT, 666666, darkGrey, T
+        box: 16, 2, 17, 3, cT, 666666, darkGrey, T
+        box: 16, 16, 17, 17, cT, 666666, darkGrey, T
+
+    # Add enemies
+        enemy: 5, 5, Skeleton
+        enemy: 5, 15, Zombie
+        enemy: 15, 5, Ghoul
+        enemy: 15, 15, Vampire
+
+    # Add custom tiles for decorations
+        custom: 9, 9, skull, S
+        custom: 10, 10, skull, S
+        custom: 9, 10, skull, S
+        custom: 10, 9, skull, S
+
+    # Add some color tiles for effect
+        cT: 2, 9, AA0000, darkRed, !
+        cT: 17, 9, AA0000, darkRed, !
+        cT: 9, 2, AA0000, darkRed, !
+        cT: 9, 17, AA0000, darkRed, !
+
+    cT: 3, 3, 00AA00, darkGreen, G
+    cT: 3, 6, 00AA00, darkGreen, G
+    cT: 6, 3, 00AA00, darkGreen, G
+    cT: 6, 6, 00AA00, darkGreen, G
+    custom: 5, 8, stairs, >
+
+# Add a comment with some meta data
+# This dungeon is designed to be challenging for a party of level 5 adventurers.

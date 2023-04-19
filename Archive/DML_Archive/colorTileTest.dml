@@ -1,0 +1,42 @@
+mapSize: 20, 10
+
+# meta data
+META: Rainbow arch over a green field
+
+# draw the grass
+box: 0, 0, 20, 10, CUSTOM, grass, /
+
+# draw the arch
+colorTile: 3, 3, ff0000, RED, R
+colorTile: 4, 3, ff7f00, ORANGE, O
+colorTile: 5, 3, ffff00, YELLOW, Y
+colorTile: 6, 3, 00ff00, GREEN, G
+colorTile: 7, 3, 007fff, BLUE, B
+colorTile: 8, 3, 8b00ff, PURPLE, P
+colorTile: 9, 3, ff1493, PINK, K
+colorTile: 10, 3, ffc0cb, LIGHTPINK, L
+colorTile: 11, 3, ff69b4, HOTPINK, H
+
+colorTile: 4, 4, ff7f00, ORANGE, R
+colorTile: 5, 4, ffff00, YELLOW, O
+colorTile: 6, 4, 00ff00, GREEN, Y
+colorTile: 7, 4, 007fff, BLUE, G
+colorTile: 8, 4, 8b00ff, PURPLE, B
+colorTile: 9, 4, ff1493, PINK, P
+
+# draw the clouds
+colorTile: 3, 0, ffffff, WHITE, C
+colorTile: 6, 1, ffffff, WHITE, C
+colorTile: 9, 0, ffffff, WHITE, C
+colorTile: 12, 1, ffffff, WHITE, C
+colorTile: 15, 0, ffffff, WHITE, C
+
+# draw the sun
+colorTile: 17, 7, ffff00, YELLOW, S
+colorTile: 16, 7, ffff80, YELLOW, S
+colorTile: 18, 7, ffff80, YELLOW, S
+colorTile: 17, 6, ffff80, YELLOW, S
+colorTile: 17, 8, ffff80, YELLOW, S
+
+# meta data
+META: Rainbow arch over a green field

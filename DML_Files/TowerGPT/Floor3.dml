@@ -1,0 +1,43 @@
+#MAP CONFIG
+mapSize: 12, 12
+CONFIG: holdMeta/True
+META: This is the third floor of the tower. You can see the gardens and the fountain from the balcony.
+CDTM: Assets/CUSTOM/stoneBricks.png
+
+#TILES
+box: 0, 0, 12, 12, cT, ADD8E6, white, -
+#Walls
+box: 0, 0, 11, 11, WALL, CORNER
+
+#Doors
+door: 5, 0, C
+door: 6, 0, C
+
+#Floor
+box: 1, 1, 10, 10, EMPTY, null
+
+#Player
+player: 6, 6, Borus
+
+#Enemies
+enemy: 3, 3, Goblin
+enemy: 8, 8, Skeleton
+
+#Custom Tiles
+colorTile: 2, 2, 008000, green, F
+colorTile: 9, 9, 008000, green, F
+custom: 2, 9, chest, C
+custom: 9, 2, chest, C
+
+#Balcony
+box: 0, 10, 11, 11, WALL, CORNER
+box: 1, 10, 10, 10, EMPTY, null
+colorTile: 3, 10, 808080, darkGrey, _
+colorTile: 4, 10, 808080, darkGrey, _
+colorTile: 7, 10, 808080, darkGrey, _
+colorTile: 8, 10, 808080, darkGrey, _
+colorTile: 2, 11, 808080, darkGrey, _
+colorTile: 3, 11, 808080, darkGrey, _
+colorTile: 4, 11, 808080, darkGrey, _
+colorTile: 7, 11, 808080, darkGrey, _
+colorTile: 8, 11, 808080, darkGrey, _

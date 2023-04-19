@@ -1,0 +1,31 @@
+# BASIC SYNTAX:
+#   - When asked for a "TYPE" input one of the following WALL, DOOR, or EMPTY
+#   - When asked for a 'TRAIT' you have a different set of options depending on the type being modified
+#       - WALL: You can enter the direction it's facing (N, E, S, W, UP, SIDE, CORNER)
+#       - DOOR: You can enter if the door is opened or closed (O, OPEN, C, CLOSED)
+#       - EMPTY: This will empty the tile given so no specific trait is required but it is recommended to use null, none, or foo
+#   - To make a comment just use the pound sign (#) and anything after that will be ignored by the compiler
+#   - After writing the basic syntax of a command anything added afterwards will be ignored and this can be used to
+#     store meta data like the health of a player or the contents of a chest
+#       - EX: player: 10, 4, Borus, HP: 18, CLASS: FIGHTER
+# COMMANDS:
+#   - mapSize: xLength, yLength
+#   - wall: x, y, TRAIT
+#   - door: x, y, TRAIT
+#   - player: x, y, PlayerName
+#   - enemy: x, y, EnemyName
+#   - custom: x, y, name, Symbol
+#   - group: x1;y1, x2;y2, Type, TRAIT
+#   - clear: x, y
+#   - line: x1, y1, x2, y2
+#   - box: x1, y1, x2, y2, Type, Trait
+#   - CONFIG: [holdMeta/True or False]
+#   - META: Ignored by compiler (Use to give explanation of what this map is in a general sense)
+
+mapSize: 30, 40
+
+box: 3, 0, 10, 10, WALL, N
+box: 3, 1, 5, 9, WALL, E
+box: 9, 1, 10, 9, WALL, E
+group: 0;0, 9;0, 0;9, 9;9, WALL, CORNER
+box: 1, 1, 9, 9, EMPTY, FOO

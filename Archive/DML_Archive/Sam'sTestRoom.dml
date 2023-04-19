@@ -1,0 +1,35 @@
+# BASIC SYNTAX:
+#   - When asked for a "TYPE" input one of the following WALL, DOOR, or EMPTY
+#   - When asked for a 'TRAIT' you have a different set of options depending on the type being modified
+#       - WALL: You can enter the direction it's facing (N, E, S, W, UP, SIDE, CORNER)
+#       - DOOR: You can enter if the door is opened or closed (O, OPEN, C, CLOSED)
+#       - EMPTY: This will empty the tile given so no specific trait is required but it is recommended to use null, none, or foo
+#   - To make a comment just use the pound sign (#) and anything after that will be ignored by the compiler
+#   - After writing the basic syntax of a command anything added afterwards will be ignored and this can be used to
+#     store meta data like the health of a player or the contents of a chest
+#       - EX: player: 10, 4, Borus, HP: 18, CLASS: FIGHTER
+# COMMANDS:
+#   - mapSize: xLength, yLength
+#   - wall: x, y, TRAIT
+#   - door: x, y, TRAIT
+#   - player: x, y, PlayerName
+#   - enemy: x, y, EnemyName
+#   - custom: x, y, name, Symbol
+#   - group: x1;y1, x2;y2, Type, TRAIT
+#   - clear: x, y
+#   - line: x1, y1, x2, y2
+#   - box: x1, y1, x2, y2, Type, Trait
+#   - CONFIG: [holdMeta/True or False]
+#   - META: Ignored by compiler (Use to give explanation of what this map is in a general sense)
+
+META: Rugged room with blood on the floor, looks like a lot of fights have happened here
+CONFIG: holdMeta/True
+mapSize: 3, 6
+player: 1,4, Sam, Meta: 12 HP
+door: 2,5, C
+group: 0;0, 0;1, 0;2, 0;3, 0;4, 0;5, 0;6, 2;0, 2;1, 2;2, 2;3, 2;4, 2;6, WALL, E
+group: 1;0, 2;0, 2;6, 1;6, WALL, N
+custom: 1,1, Chair, *, Meta: A war torn chair with lots of blood a slight case of severe PTSD
+custom: 2,1, Desk, D, Meta: Just a desk with a severed hand on it (Looks Fresh)
+enemy: 2, 4, MySelf, Meta: Suicidal
+custom: 1,5, chest, %, Meta: the chest is dripping in blood and filled with hearts of what look like they are human

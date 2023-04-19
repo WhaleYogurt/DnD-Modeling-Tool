@@ -1,0 +1,18 @@
+META: A secret room hidden beneath the dungeon
+mapSize: 9, 9
+CDTM: Assets/CUSTOM/stoneBricks.png
+
+# Room layout
+    box: 0, 0, 9, 9, WALL, CORNER
+    box: 1, 1, 8, 8, EMPTY, foo
+    door: 5, 8, CLOSED
+    custom: 5, 5, skull, S
+
+# Add some color tiles for effect
+    cT: 3, 3, 00AA00, darkGreen, G
+    cT: 3, 6, 00AA00, darkGreen, G
+    cT: 6, 3, 00AA00, darkGreen, G
+    cT: 6, 6, 00AA00, darkGreen, G
+
+# Add a way down to the next level
+    custom: 5, 8, stairs, >

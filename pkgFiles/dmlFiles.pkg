@@ -1,0 +1,587 @@
+# BASIC SYNTAX:
+#   - When asked for a "TYPE" input one of the following WALL, DOOR, or EMPTY
+#   - When asked for a 'TRAIT' you have a different set of options depending on the type being modified
+#       - WALL: You can enter the direction it's facing (N, E, S, W, UP, SIDE, CORNER)
+#       - DOOR: You can enter if the door is opened or closed (O, OPEN, C, CLOSED)
+#       - EMPTY: This will empty the tile given so no specific trait is required but it is recommended to use null, none, or foo
+#   - To make a comment just use the pound sign (#) and anything after that will be ignored by the compiler
+#   - After writing the basic syntax of a command anything added afterwards will be ignored and this can be used to
+#     store meta data like the health of a player or the contents of a chest
+#       - EX: player: 10, 4, Borus, HP: 18, CLASS: FIGHTER
+# COMMANDS:
+#   - mapSize: xLength, yLength
+#   - wall: x, y, TRAIT
+#   - door: x, y, TRAIT
+#   - player: x, y, PlayerName
+#   - enemy: x, y, EnemyName
+#   - custom: x, y, name, Symbol
+#   - group: x1;y1, x2;y2, Type, TRAIT
+#   - clear: x, y
+#   - line: x1, y1, x2, y2
+#   - box: x1, y1, x2, y2, Type, Trait
+#   - CONFIG: [holdMeta/True or False]
+#   - META: Ignored by compiler (Use to give explanation of what this map is in a general sense)
+
+mapSize: 30, 40
+
+box: 3, 0, 10, 10, WALL, N
+box: 3, 1, 5, 9, WALL, E
+box: 9, 1, 10, 9, WALL, E
+group: 0;0, 9;0, 0;9, 9;9, WALL, CORNER
+box: 1, 1, 9, 9, EMPTY, FOO
+{}{}{}{}{}Basement.dml
+
+
+
+
+
+# META: This is a map for a romantic bedroom with dim lighting and a cozy atmosphere.
+
+# Set the size of the map
+mapSize: 5, 5
+CDTM: Assets/CUSTOM/floor.png
+# newOBJ: table, Assets/CUSTOM/table.png
+
+# Define the walls of the room
+box: 0, 0, 5, 5, WALL, CORNER
+box: 1, 1, 4, 4, EMPTY, foo
+
+# Add a cozy bed in the center of the room
+custom: 2, 2, BED, B
+
+# Add a nightstand next to the bed
+custom: 1, 2, NIGHTSTAND, N
+
+# Add dim lighting to the room
+custom: 1, 1, LIGHT, L
+custom: 3, 1, LIGHT, L
+custom: 1, 3, LIGHT, L
+custom: 3, 3, LIGHT, L{}{}{}{}{}Bedroom.dml
+
+
+
+
+
+# Header
+    META: A creepy dungeon filled with traps
+    mapSize: 20, 20
+    CDTM: Assets/CUSTOM/stoneBricks.png
+
+# Body
+
+    # Main Room
+        box: 0, 0, 20, 20, WALL, CORNER
+        box: 1, 1, 19, 19, EMPTY, foo
+        door: 0, 9, CLOSED
+
+    # Create traps
+        box: 2, 2, 3, 3, cT, 666666, darkGrey, T
+        box: 2, 16, 3, 17, cT, 666666, darkGrey, T
+        box: 16, 2, 17, 3, cT, 666666, darkGrey, T
+        box: 16, 16, 17, 17, cT, 666666, darkGrey, T
+
+    # Add enemies
+        enemy: 5, 5, Skeleton
+        enemy: 5, 15, Zombie
+        enemy: 15, 5, Ghoul
+        enemy: 15, 15, Vampire
+
+    # Add custom tiles for decorations
+        custom: 9, 9, skull, S
+        custom: 10, 10, skull, S
+        custom: 9, 10, skull, S
+        custom: 10, 9, skull, S
+
+    # Add some color tiles for effect
+        cT: 2, 9, AA0000, darkRed, !
+        cT: 17, 9, AA0000, darkRed, !
+        cT: 9, 2, AA0000, darkRed, !
+        cT: 9, 17, AA0000, darkRed, !
+
+    cT: 3, 3, 00AA00, darkGreen, G
+    cT: 3, 6, 00AA00, darkGreen, G
+    cT: 6, 3, 00AA00, darkGreen, G
+    cT: 6, 6, 00AA00, darkGreen, G
+    custom: 5, 8, stairs, >
+
+# Add a comment with some meta data
+# This dungeon is designed to be challenging for a party of level 5 adventurers.
+{}{}{}{}{}cGPTdungeon.dml
+
+
+
+
+
+META: A secret room hidden beneath the dungeon
+mapSize: 9, 9
+CDTM: Assets/CUSTOM/stoneBricks.png
+
+# Room layout
+    box: 0, 0, 9, 9, WALL, CORNER
+    box: 1, 1, 8, 8, EMPTY, foo
+    door: 5, 8, CLOSED
+    custom: 5, 5, skull, S
+
+# Add some color tiles for effect
+    cT: 3, 3, 00AA00, darkGreen, G
+    cT: 3, 6, 00AA00, darkGreen, G
+    cT: 6, 3, 00AA00, darkGreen, G
+    cT: 6, 6, 00AA00, darkGreen, G
+
+# Add a way down to the next level
+    custom: 5, 8, stairs, >
+{}{}{}{}{}cGPTdungeonBASEMENT.dml
+
+
+
+
+
+# This is a comment explaining what we're doing
+# First, we'll set the size of our map
+mapSize: 10, 10
+
+# Next, we'll create the walls of our room
+wall: 1, 1, S
+wall: 1, 2, S
+wall: 1, 3, S
+wall: 1, 4, S
+wall: 2, 4, E
+wall: 3, 4, E
+wall: 4, 4, E
+wall: 5, 4, E
+wall: 5, 3, S
+wall: 5, 2, S
+wall: 5, 1, S
+wall: 4, 1, W
+wall: 3, 1, W
+wall: 2, 1, W
+wall: 2, 2, N
+wall: 2, 3, N
+
+# Now we'll create a door on one of the walls
+door: 1, 2, CLOSED
+
+# And a window on another wall
+custom: 4, 2, window, W
+
+# Finally, we'll add some metadata to our map
+META: This is a small room with a door and a window.
+{}{}{}{}{}Classroom.dml
+
+
+
+
+
+mapSize: 20, 10
+
+# meta data
+META: Rainbow arch over a green field
+
+# draw the grass
+box: 0, 0, 20, 10, CUSTOM, grass, /
+
+# draw the arch
+colorTile: 3, 3, ff0000, RED, R
+colorTile: 4, 3, ff7f00, ORANGE, O
+colorTile: 5, 3, ffff00, YELLOW, Y
+colorTile: 6, 3, 00ff00, GREEN, G
+colorTile: 7, 3, 007fff, BLUE, B
+colorTile: 8, 3, 8b00ff, PURPLE, P
+colorTile: 9, 3, ff1493, PINK, K
+colorTile: 10, 3, ffc0cb, LIGHTPINK, L
+colorTile: 11, 3, ff69b4, HOTPINK, H
+
+colorTile: 4, 4, ff7f00, ORANGE, R
+colorTile: 5, 4, ffff00, YELLOW, O
+colorTile: 6, 4, 00ff00, GREEN, Y
+colorTile: 7, 4, 007fff, BLUE, G
+colorTile: 8, 4, 8b00ff, PURPLE, B
+colorTile: 9, 4, ff1493, PINK, P
+
+# draw the clouds
+colorTile: 3, 0, ffffff, WHITE, C
+colorTile: 6, 1, ffffff, WHITE, C
+colorTile: 9, 0, ffffff, WHITE, C
+colorTile: 12, 1, ffffff, WHITE, C
+colorTile: 15, 0, ffffff, WHITE, C
+
+# draw the sun
+colorTile: 17, 7, ffff00, YELLOW, S
+colorTile: 16, 7, ffff80, YELLOW, S
+colorTile: 18, 7, ffff80, YELLOW, S
+colorTile: 17, 6, ffff80, YELLOW, S
+colorTile: 17, 8, ffff80, YELLOW, S
+
+# meta data
+META: Rainbow arch over a green field
+{}{}{}{}{}colorTileTest.dml
+
+
+
+
+
+# BASIC SYNTAX:
+#   - When asked for a "TYPE" input one of the following WALL, DOOR, or EMPTY
+#   - When asked for a 'TRAIT' you have a different set of options depending on the type being modified
+#       - WALL: You can enter the direction it's facing (N, E, S, W, UP, SIDE, CORNER)
+#       - DOOR: You can enter if the door is opened or closed (O, OPEN, C, CLOSED)
+#       - EMPTY: This will empty the tile given so no specific trait is required but it is recommended to use null, none, or foo
+#   - To make a comment just use the pound sign (#) and anything after that will be ignored by the compiler
+#   - After writing the basic syntax of a command anything added afterwards will be ignored and this can be used to
+#     store meta data like the health of a player or the contents of a chest
+#       - EX: player: 10, 4, Borus, HP: 18, CLASS: FIGHTER
+# COMMANDS:
+#   - mapSize: xLength, yLength
+#       - mapSize: 10, 19
+#   - wall: x, y, TRAIT
+#       - 2, 1, UP
+#   - door: x, y, TRAIT
+#       - door: 4, 3, OPEN
+#   - player: x, y, PlayerName
+#       - player: 10, 4, Borus
+#   - enemy: x, y, EnemyName
+#       - enemy: 3, 4, Goblin
+#   - custom: x, y, name, Symbol
+#       - custom: 5, 4, chest, C
+#   - group: x1;y1, x2;y2, Type, TRAIT
+#       - EX: group: 10;5, 10;6, door, O
+#   - clear: x, y
+#       - EX: clear: 9, 0
+#   - box: x1, y1, x2, y2, Type, Trait
+#       - EX: 0, 0, 10, 10, WALL, CORNER
+#       - EX: 0, 0, 10, 10, (cT or colorTile), 666666, darkGrey, G
+#   - colorTile or cT: x, y, hex, colorName, Symbol
+#       - EX: 5, 10, 666666, darkGrey, G
+#   - CONFIG: [holdMeta/True or False]
+#       - EX: CONFIG: holdMeta/True
+#   - META: Ignored by compiler (Use to give explanation of what this map is in a general sense)
+#       - META: A cool room filed with gold
+
+
+# Header
+    META: First Floor of a Hotel
+    CONFIG: holdMeta/True
+    mapSize: 10, 10 # Map Size
+
+
+# Body
+
+    # Main Floor
+        # Walls
+            box: 0, 0, 10, 10, WALL, UP
+            box: 0, 1, 1, 9, WALL, SIDE
+            box: 9, 1, 10, 9, WALL, SIDE
+            box: 1, 1, 9, 9, EMPTY, FOO
+        # Corner Pieces
+            group: 0;0, 0;9, 9;0, 9;9, WALL, CORNER
+
+        # Adding Doors
+            door: 9, 4, O
+            door: 9, 5, O
+
+        # Table
+            custom: 5, 4, table, T, Meta: Has a closed chest with a circle shaped lock on top of it
+
+        # Stairs
+
+            # Floor 2
+                stairs: 1, 1, U
+                stairs: 2, 1, U
+                stairs: 3, 1, U
+            # Basement
+                stairs: 1, 8, U
+                stairs: 2, 8, U
+                stairs: 3, 8, U
+
+        # Pool
+            # Sides
+                box: 1, 3, 4, 7, CUSTOM, stoneBricks, S
+            # Water
+                box: 2, 4, 3, 6, CUSTOM, water, ~
+
+    # Left Room
+        # Main Room Parts
+            box: 5, 1, 6, 3, WALL, SIDE
+            wall: 5, 3, CORNER
+            wall: 9, 3, CORNER
+            wall: 5, 0, CORNER
+            door: 6, 3, C
+            box: 7, 3, 9, 4, WALL, UP
+        # Inside of room
+            custom: 8, 1, chest, C, META: Contains a key with a triangle on the handel
+
+    # Right Room
+        # Main Room Parts
+            box: 5, 7, 6, 9, WALL, SIDE
+            wall: 5, 6, CORNER
+            wall: 9, 6, CORNER
+            wall: 5, 9, CORNER
+            door: 6, 6, C
+            box: 7, 6, 9, 7, WALL, UP
+        # Inside of room
+            custom: 8, 8, chest, C, META: Contains a key with a square on the handel
+
+    # Adding A Player
+        player: 7, 4, Borus, META: -1 HP
+{}{}{}{}{}Floor1.dml
+
+
+
+
+
+# Header
+    META: Second Floor of a Hotel
+    CONFIG: holdMeta/True
+    mapSize: 10, 10 # Map Size
+
+# Body
+    # Main Floor
+        # Stairs
+            # Floor 1
+                stairs: 1, 1, D
+                stairs: 2, 1, D
+                stairs: 3, 1, D
+            # Floor 3
+                stairs: 1, 8, U
+                stairs: 2, 8, U
+                stairs: 3, 8, U
+
+    # Left Room
+        # Main Room Parts
+            box: 5, 1, 6, 3, WALL, SIDE
+            wall: 5, 3, CORNER
+            wall: 9, 3, CORNER
+            wall: 5, 0, CORNER
+            door: 6, 3, C
+            box: 7, 3, 9, 4, WALL, UP
+        # Inside of room
+            custom: 8, 1, bed, B, META: Comfortable but creaky
+
+    # Right Room
+        # Main Room Parts
+            box: 5, 7, 6, 9, WALL, SIDE
+            wall: 5, 6, CORNER
+            wall: 9, 6, CORNER
+            wall: 5, 9, CORNER
+            door: 6, 6, C
+            box: 7, 6, 9, 7, WALL, UP
+        # Inside of room
+            custom: 8, 8, bed, B, META: Firm but old-fashioned
+{}{}{}{}{}Floor2.dml
+
+
+
+
+
+# BASIC SYNTAX:
+#   - When asked for a "TYPE" input one of the following WALL, DOOR, or EMPTY
+#   - When asked for a 'TRAIT' you have a different set of options depending on the type being modified
+#       - WALL: You can enter the direction it's facing (N, E, S, W, UP, SIDE, CORNER)
+#       - DOOR: You can enter if the door is opened or closed (O, OPEN, C, CLOSED)
+#       - EMPTY: This will empty the tile given so no specific trait is required but it is recommended to use null, none, or foo
+#   - To make a comment just use the pound sign (#) and anything after that will be ignored by the compiler
+#   - After writing the basic syntax of a command anything added afterwards will be ignored and this can be used to
+#     store meta data like the health of a player or the contents of a chest
+#       - EX: player: 10, 4, Borus, HP: 18, CLASS: FIGHTER
+# COMMANDS:
+#   - mapSize: xLength, yLength
+#   - wall: x, y, TRAIT
+#   - door: x, y, TRAIT
+#   - player: x, y, PlayerName
+#   - enemy: x, y, EnemyName
+#   - custom: x, y, name, Symbol
+#   - group: x1;y1, x2;y2, Type, TRAIT
+#   - clear: x, y
+#   - line: x1, y1, x2, y2
+#   - box: x1, y1, x2, y2, Type, Trait
+#   - CONFIG: [holdMeta/True or False]
+#   - META: Ignored by compiler (Use to give explanation of what this map is in a general sense)
+
+# Create a 50x50 grid for the garden
+mapSize: 50, 50
+
+# Add some metadata about the garden
+META: This is a large garden with a fountain, benches, trees, flowers, and lampposts. It is a peaceful place to relax and enjoy nature.
+
+# Create garden using box
+box: 0, 0, 50, 50, WALL, UP
+box: 0, 1, 2, 49, WALL, SIDE
+box: 48, 1, 50, 49, WALL, SIDE
+box: 2, 2, 48, 48, EMPTY, FOO
+
+# Create Corner Pieces
+group: 0;0, 1;1, WALL, CORNER
+group: 49;0, 48;1, WALL, CORNER
+group: 49;49, 48;48, WALL, CORNER
+group: 0;49, 1;48, WALL, CORNER
+
+# Create a fountain in the center of the garden
+custom: 25, 25, fountain, F
+
+# Add some decorative flowers around the fountain
+group: 24;23, 24;26, CUSTOM, flowers, F
+group: 26;23, 26;26, CUSTOM, flowers, F
+group: 23;24, 26;24, CUSTOM, flowers, F
+group: 23;26, 26;26, CUSTOM, flowers, F
+
+# Add some trees around the edges of the garden
+group: 3;3, 3;6, CUSTOM, tree, T
+group: 7;3, 7;6, CUSTOM, tree, T
+group: 3;43, 3;46, CUSTOM, tree, T
+group: 7;43, 7;46, CUSTOM, tree, T
+group: 43;3, 43;6, CUSTOM, tree, T
+group: 47;3, 47;6, CUSTOM, tree, T
+group: 43;43, 43;46, CUSTOM, tree, T
+group: 47;43, 47;46, CUSTOM, tree, T
+
+# Add some benches for people to sit on
+custom: 9, 20, bench, B
+custom: 20, 9, bench, B
+custom: 40, 29, bench, B
+custom: 29, 40, bench, B
+
+# Add some lampposts for illumination at night
+custom: 12, 12, lamppost, L
+custom: 12, 37, lamppost, L
+custom: 37, 12, lamppost, L
+custom: 37, 37, lamppost, L
+
+# Add a sign with the name of the garden
+custom: 2, 2, sign, S
+
+# Adding Plants on the bottem of the screen
+box: 40, 3, 47, 9, CUSTOM, tomato, T
+box: 40, 10, 47, 16, CUSTOM, carrot, C
+box: 40, 17, 47, 23, CUSTOM, broccoli, B
+box: 40, 24, 47, 30, CUSTOM, radish, R
+{}{}{}{}{}Garden.dml
+
+
+
+
+
+# META: Liberty Island
+mapSize: 25, 50
+
+# Water
+box: 1, 1, 24, 49, CUSTOM, WATER, ~
+
+# Island
+box: 6, 10, 20, 40, WALL, N
+box: 7, 11, 19, 39, CUSTOM, dirt, +
+
+# Statue of Liberty
+box: 10, 19, 14, 22, CUSTOM, statue, ;
+box: 9, 20, 10, 26, CUSTOM, statue, ;
+box: 13, 15, 14, 22, CUSTOM, statue, ;
+box: 11, 13, 18, 22, CUSTOM, statue, ;
+box: 14, 16, 18, 22, CUSTOM, statue, ;
+
+# Gift shop
+box: 14, 28, 16, 32, CUSTOM, stone, S
+box: 15, 29, 15, 31, EMPTY, none
+door: 15, 30, C
+custom: 14, 29, window, E
+
+# Trees
+box: 3, 19, 3, 19, CUSTOM, leaves, L
+box: 6, 19, 6, 19, CUSTOM, leaves, L
+box: 4, 21, 4, 21, CUSTOM, leaves, L
+box: 5, 20, 5, 20, CUSTOM, leaves, L
+box: 5, 22, 5, 22, CUSTOM, leaves, L
+{}{}{}{}{}LibertyIsland.dml
+
+
+
+
+
+# BASIC SYNTAX:
+#   - When asked for a "TYPE" input one of the following WALL, DOOR, or EMPTY
+#   - When asked for a 'TRAIT' you have a different set of options depending on the type being modified
+#       - WALL: You can enter the direction it's facing (N, E, S, W, UP, SIDE, CORNER)
+#       - DOOR: You can enter if the door is opened or closed (O, OPEN, C, CLOSED)
+#       - EMPTY: This will empty the tile given so no specific trait is required but it is recommended to use null, none, or foo
+#   - To make a comment just use the pound sign (#) and anything after that will be ignored by the compiler
+#   - After writing the basic syntax of a command anything added afterwards will be ignored and this can be used to
+#     store meta data like the health of a player or the contents of a chest
+#       - EX: player: 10, 4, Borus, HP: 18, CLASS: FIGHTER
+# COMMANDS:
+#   - mapSize: xLength, yLength
+#   - wall: x, y, TRAIT
+#   - door: x, y, TRAIT
+#   - player: x, y, PlayerName
+#   - enemy: x, y, EnemyName
+#   - custom: x, y, name, Symbol
+#   - group: x1;y1, x2;y2, Type, TRAIT
+#   - clear: x, y
+#   - line: x1, y1, x2, y2
+#   - box: x1, y1, x2, y2, Type, Trait
+#   - CONFIG: [holdMeta/True or False]
+#   - META: Ignored by compiler (Use to give explanation of what this map is in a general sense)
+
+META: Rugged room with blood on the floor, looks like a lot of fights have happened here
+CONFIG: holdMeta/True
+mapSize: 3, 6
+player: 1,4, Sam, Meta: 12 HP
+door: 2,5, C
+group: 0;0, 0;1, 0;2, 0;3, 0;4, 0;5, 0;6, 2;0, 2;1, 2;2, 2;3, 2;4, 2;6, WALL, E
+group: 1;0, 2;0, 2;6, 1;6, WALL, N
+custom: 1,1, Chair, *, Meta: A war torn chair with lots of blood a slight case of severe PTSD
+custom: 2,1, Desk, D, Meta: Just a desk with a severed hand on it (Looks Fresh)
+enemy: 2, 4, MySelf, Meta: Suicidal
+custom: 1,5, chest, %, Meta: the chest is dripping in blood and filled with hearts of what look like they are human{}{}{}{}{}Sam'sTestRoom.dml
+
+
+
+
+
+# META: Supermarket
+mapSize: 20, 30
+
+# Walls
+box: 1, 1, 18, 28, WALL, N
+
+# Aisles
+box: 3, 3, 16, 4, CUSTOM, veggie, +
+box: 3, 6, 16, 7, CUSTOM, fruit, +
+box: 3, 9, 16, 10, CUSTOM, meat, +
+box: 3, 12, 16, 13, CUSTOM, dairy, +
+box: 3, 15, 16, 16, CUSTOM, bakery, +
+box: 3, 18, 16, 19, CUSTOM, canned_food, +
+
+# Shelves
+box: 5, 5, 6, 7, CUSTOM, shelf, 3x3, type:produce
+box: 8, 5, 9, 7, CUSTOM, shelf, 3x2, type:produce
+box: 11, 5, 12, 7, CUSTOM, shelf, 3x2, type:produce
+box: 14, 5, 15, 7, CUSTOM, shelf, 3x3, type:produce
+
+box: 5, 10, 6, 12, CUSTOM, shelf, 3x3, type:meat
+box: 8, 10, 9, 12, CUSTOM, shelf, 3x2, type:meat
+box: 11, 10, 12, 12, CUSTOM, shelf, 3x2, type:meat
+box: 14, 10, 15, 12, CUSTOM, shelf, 3x3, type:meat
+
+box: 5, 14, 6, 16, CUSTOM, shelf, 3x3, type:dairy
+box: 8, 14, 9, 16, CUSTOM, shelf, 3x2, type:dairy
+box: 11, 14, 12, 16, CUSTOM, shelf, 3x2, type:dairy
+box: 14, 14, 15, 16, CUSTOM, shelf, 3x3, type:dairy
+
+box: 5, 19, 6, 21, CUSTOM, shelf, 3x3, type:packaged
+box: 8, 19, 9, 21, CUSTOM, shelf, 3x2, type:packaged
+box: 11, 19, 12, 21, CUSTOM, shelf, 3x2, type:packaged
+box: 14, 19, 15, 21, CUSTOM, shelf, 3x3, type:packaged
+
+# Checkout
+box: 1, 23, 2, 28, CUSTOM, checkout, C
+custom: 1, 24, sign, text:Cashier
+
+# Entrance/Exit
+box: 1, 0, 1, 2, door, O
+custom: 2, 1, sign, text:Entrance/Exit
+box: 1, 28, 2, 29, door, O
+custom: 2, 29, sign, text:Entrance/Exit
+{}{}{}{}{}SuperMarket.dml
+
+
+
+
+

@@ -1,0 +1,29 @@
+# META: Liberty Island
+mapSize: 25, 50
+
+# Water
+box: 1, 1, 24, 49, CUSTOM, WATER, ~
+
+# Island
+box: 6, 10, 20, 40, WALL, N
+box: 7, 11, 19, 39, CUSTOM, dirt, +
+
+# Statue of Liberty
+box: 10, 19, 14, 22, CUSTOM, statue, ;
+box: 9, 20, 10, 26, CUSTOM, statue, ;
+box: 13, 15, 14, 22, CUSTOM, statue, ;
+box: 11, 13, 18, 22, CUSTOM, statue, ;
+box: 14, 16, 18, 22, CUSTOM, statue, ;
+
+# Gift shop
+box: 14, 28, 16, 32, CUSTOM, stone, S
+box: 15, 29, 15, 31, EMPTY, none
+door: 15, 30, C
+custom: 14, 29, window, E
+
+# Trees
+box: 3, 19, 3, 19, CUSTOM, leaves, L
+box: 6, 19, 6, 19, CUSTOM, leaves, L
+box: 4, 21, 4, 21, CUSTOM, leaves, L
+box: 5, 20, 5, 20, CUSTOM, leaves, L
+box: 5, 22, 5, 22, CUSTOM, leaves, L

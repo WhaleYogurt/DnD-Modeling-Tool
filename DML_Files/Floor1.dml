@@ -1,0 +1,32 @@
+# Define map size
+mapSize: 10, 6
+
+# Create walls
+box: 0, 0, 4, 2, WALL, UP
+box: 0, 0, 4, 2, WALL, SIDE
+box: 4, 0, 4, 2, WALL, UP
+box: 4, 0, 4, 2, WALL, SIDE
+box: 0, 2, 4, 2, WALL, SIDE
+box: 0, 2, 4, 2, WALL, CORNER
+box: 0, 2, 0, 5, WALL, SIDE
+box: 0, 2, 0, 5, WALL, UP
+box: 0, 5, 4, 5, WALL, SIDE
+box: 0, 5, 4, 5, WALL, CORNER
+box: 4, 2, 4, 5, WALL, SIDE
+box: 4, 2, 4, 5, WALL, UP
+
+# Create entrance
+door: 4, 3, CLOSED
+
+# Create windows
+custom: 0, 4, Window, W
+custom: 0, 5, Window, W
+
+# Create bedroom
+box: 1, 3, 2, 5, EMPTY, null
+
+# Create living room
+box: 2, 1, 4, 2, EMPTY, null
+
+# Create kitchen
+box: 1, 1, 2, 2, EMPTY, null

@@ -1,0 +1,30 @@
+# DML Script for Floor 4 of Tower
+CDTM: Assets/CUSTOM/stoneBricks.png
+
+# Set map size
+mapSize: 10, 10
+
+# Add walls and doors
+box: 0, 0, 1, 9, WALL, LEFT
+box: 1, 0, 10, 1, WALL, UP
+box: 9, 1, 10, 9, WALL, RIGHT
+box: 0, 9, 9, 10, WALL, UP
+group: 0;0, 0;9, 9;0, 9;9, WALL, CORNER
+
+door: 4, 0, CLOSED
+door: 4, 9, CLOSED
+
+# Add player and enemies
+player: 5, 5, Hero
+enemy: 2, 2, Goblin
+enemy: 7, 7, Orc
+
+# Add custom tiles and decorations
+colorTile: 1, 1, FF0000, Red, META: An expensive carpet
+colorTile: 8, 8, 00FF00, Green, META: An expensive carpet
+custom: 3, 3, Statue, S
+custom: 6, 6, Fountain, F
+
+# Add balconies
+group: 0;4, 0;5, EMPTY, none
+group: 9;4, 9;5, EMPTY, none
